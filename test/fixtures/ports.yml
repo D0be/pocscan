@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: 
+  target: 
+  status: 1
+
+two:
+  title: 
+  target: 
+  status: 1

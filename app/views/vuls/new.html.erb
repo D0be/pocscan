@@ -1,0 +1,98 @@
+<% provide(:title, "VulDB") %>
+
+<h1>This can commit a new vulnerability</h1>
+
+<div class="bs-example">
+<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#exampleModal1" data-whatever="@mdo">File</button>
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#exampleModal2" data-whatever="@mdo">Json</button>
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+     <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">New POC</h4>
+      </div>
+         <div class="modal-body">
+            <%= form_for(@vul, url: newvul_path ) do |f| %>
+                <%= render 'shared/error_messages', object: f.object %>
+
+                <%= f.hidden_field :format, :value=>"file" %>
+
+                <%= f.label :name %>
+                <%= f.text_field :name %>
+
+                <%= f.label :description %>
+                <%= f.text_field :description %>
+                
+                <%= f.label :search_key %>
+                <%= f.text_field :search_key %>
+                
+                <%= f.label :type %>
+                <%= f.select :type_id, @vultype.collect { |t| [t.typename, t.id] }, {}, { :class => 'form-control' } %>
+
+                <%= f.label :level %>
+                <%= f.select :level_id, @vullevel.collect { |t| [t.levelname, t.id] }, {}, { :class => 'form-control' } %>
+
+                <%= f.label :poc %>
+                <%= f.file_field :file, class: "form-control" %>
+                <%= f.hidden_field :file_cache %>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            <% end %>
+        </div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+     <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">New POC</h4>
+      </div>
+         <div class="modal-body">
+            <%= form_for(@vul, url: newvul_path, :html => { :class => "form-horizontal" } ) do |f| %>
+                <%= render 'shared/error_messages', object: f.object %>
+
+                <%= f.hidden_field :format, :value=>"json" %>
+                <%= f.label :name %>
+                <%= f.text_field :name %>
+
+                <%= f.label :description %>
+                <%= f.text_field :description %>
+                
+                <%= f.label :search_key %>
+                <%= f.text_field :search_key %>
+                
+                <%= f.label :type %>
+                <%= f.select :type_id, @vultype.collect { |t| [t.typename, t.id] }, {}, { :class => 'form-control' } %>
+
+                <%= f.label :level %>
+                <%= f.select :level_id, @vullevel.collect { |t| [t.levelname, t.id] }, {}, { :class => 'form-control' } %>
+
+                <div class="form-group">
+                <%= select "poc", :method, ["GET", "POST"], {}, { :class => 'col-sm-2 control-label' } %>
+                <div class="col-sm-9">
+                <%= text_field "poc", :getdata,  { :class => "form-control" }%>
+                </div>
+                </div>
+
+                <%= text_area "poc", :postdata, { :placeholder =>"Post data...", :class => 'form-control' } %>
+                <div class="form-group">
+                <%= label "poc", :keyword, { :class => "col-sm-2 control-label" } %>
+                 <div class="col-sm-5">
+                <%= text_field "poc", :keyword, { :class => "form-control" } %>
+                </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            <% end %>
+        </div>
+</div>
+
+</div>

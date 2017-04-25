@@ -1,0 +1,13 @@
+{
+  "info": "Wordpress Twentyfourteen Theme (Default Theme) Full Path Disclosure",
+  "name": "Wordpress Twentyfourteen Theme (Default Theme) Full Path Disclosure",
+  "search_key": "cms:wordpress",
+  "type": "未授权访问",
+  "level": "中危",
+  "plugin": {
+    "method": "GET",
+    "getdata": "/wp-content/themes/twentyfourteen/index.php",
+    "postdata": "",
+    "keyword": "Fatal error"
+  }
+}

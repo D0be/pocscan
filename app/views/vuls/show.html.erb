@@ -1,0 +1,19 @@
+<% provide(:title, @vul.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= @vul.name %>
+      </h1>
+      <ul>
+      	<li><%= @vul.description %></li>
+      	<li><%= @vul.search_key %></li>
+      	<li><%= @vul.type.typename %></li>
+      	<li><%= @vul.level.levelname %></li>
+      	<li><%= @vul.user.name %></li>
+      </ul>
+    </section>
+    <%= createcode(@vul.file.current_path) %>
+  </aside>
+
+</div>

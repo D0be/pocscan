@@ -1,0 +1,4 @@
+# Nmap 6.40 scan initiated Tue Feb 28 08:29:04 2017 as: /usr/bin/nmap -sV --allports -PS -oA .output/1 127.0.0.1
+Host: 127.0.0.1 (localhost)	Status: Up
+Host: 127.0.0.1 (localhost)	Ports: 631/open/tcp//ipp//CUPS 1.7/, 3000/open/tcp//http-proxy//sslstrip/	Ignored State: closed (998)
+# Nmap done at Tue Feb 28 08:29:12 2017 -- 1 IP address (1 host up) scanned in 7.76 seconds

@@ -1,0 +1,26 @@
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Panel heading</div>
+
+  <!-- Table -->
+  <table class="table">
+    <thead>
+     <tr>
+       <th>#</th>
+       <th>Name</th>
+       <th>Description</th>
+     </tr>
+    </thead>
+    <tbody>
+    <% @vuls.each do |vul| %>
+    <tr>
+    <td><%= vul.created_at %></td>
+    <td><%= vul.name %></td>
+    <td><%= vul.description %></td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= will_paginate @vuls %>

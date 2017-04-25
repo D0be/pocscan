@@ -1,0 +1,10 @@
+# Nmap 6.40 scan initiated Tue Feb 28 08:29:04 2017 as: /usr/bin/nmap -sV --allports -PS -oA .output/1 127.0.0.1
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.0000040s latency).
+Not shown: 998 closed ports
+PORT     STATE SERVICE    VERSION
+631/tcp  open  ipp        CUPS 1.7
+3000/tcp open  http-proxy sslstrip
+
+Service detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+# Nmap done at Tue Feb 28 08:29:12 2017 -- 1 IP address (1 host up) scanned in 7.76 seconds

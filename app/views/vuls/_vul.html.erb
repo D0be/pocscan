@@ -1,0 +1,9 @@
+<div class="list-group col-md-4">
+  <a href="<%= vul_path(vul) %>" class="list-group-item active">
+    <h4 class="list-group-item-heading"><button type="button" class="btn btn-info btn-xs">Vulname: </button>&nbsp&nbsp<%= vul.name %></h4>
+    <p class="list-group-item-text"><button type="button" class="btn btn-info btn-xs">Author: </button>&nbsp&nbsp<%= vul.user.name %></p>
+    <button type="button" class="btn btn-info btn-xs">Description: </button>
+    <p class="list-group-item-text"><%= vul.description %></p>
+    <p class="list-group-item-text"><button type="button" class="btn btn-info btn-xs">Update_at: </button>&nbsp&nbsp<%= vul.updated_at %></p>
+  </a>
+</div>
